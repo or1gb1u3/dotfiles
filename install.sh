@@ -30,12 +30,12 @@ echo "...done"
 for file in $files; do
 	echo "Moving any existing dotfiles from ~ to $olddir"
 	#check if the file is already a link and if not make it so
-	if [ ! -h $files ]; then
-		mv ~/.$file ~/$olddir
+	if [ -h $files ]; then
+		echo "already there"
+	else
+		mv ~/.$file $olddir
 		echo "Creating symlink to $file in home directory."
 		ln -s $dir/$file ~/.$file
-	else
-		echo "Already updated"
 	fi
 done
 
