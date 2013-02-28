@@ -1,3 +1,47 @@
-[begin] (fluxbox)
-[include] (/etc/X11/fluxbox/fluxbox-menu)
+#Talyns new menu
+
+[begin] (Talyn)
+	[exec] (terminal) {aterm -font courier -g 80x24 -tr +sb -sh 20}
+	[exec] (test Term)
+	[exec] (firefox) {firefox}
+	[exec] (irssi) {aterm }
+	[exec] (Run) {fbrun}
+	[workspaces] (Workspaces)
+	[separator]
+	[submenu] (Applications) {}
+		[include] (~/dotfiles/fluxbox/apps.menu)
+	[end]
+	[submenu] (Configs)
+		#_nf = no file
+		[exec] (Fluxbox Menu) {aterm -e nano ~/dotfiles/fluxbox/menu}
+		[exec] (Fluxbox Init) {aterm -e nano ~/dotfiles/fluxbox/init}
+		[exec] (Fluxbox Startup) {aterm -e nano ~/dotfiles/fluxbox/startup}
+		[separator]
+		[exec] (Bash rc) {aterm -e nano ~/dotfiles/bashrc}
+		[exec] (Bash aliases) {aterm -e nano ~/dotfiles/bash_aliases}
+		[separator]
+		[exec] (Conkey Config-nf) {}
+
+	[end]
+	[submenu] (Tools)
+		[exec] (Window name) {xprop WM_CLASS|cut -d \" -f 2|xmessage -file - -center}
+		[exec] (Screenshot - JPG) {import screenshot.jpg && display - resize 50% screenshot.jpg}
+		[exec] (Screenshot - PNG) {inport screenshot.png && display -resize 50% screenshot.png}
+	[end]
+	[submenu] (fluxTools)
+
+		[submenu] (Configuration)
+			[submenu] (Styles)
+				[stylesdir] (~/dotfiles/fluxbox/styles)
+				[stylesdir] (/usr/share/fluxbox/styles)
+			[end]
+		[end]
+		[separator]
+		[exec] (About Fluxbox) {(fluxbox -v; fluxbox -info | sed 1d) | xmessage -file - -center}
+		[commanddialog] (Fluxbox Command)
+		[exec] (Regn Menu) {fluxbox-generate_menu}
+		[reconfig] (Reload config)
+		[restart] (Restart)
+		[exit] (Exit)
+	[end]
 [end]
