@@ -11,7 +11,7 @@
 
 dir=~/dotfiles			#dotfiles directory
 olddir=~/dotfiles_old
-files="bashrc bash_aliases fluxbox"
+files="bashrc bash_aliases bash_functions conkyrc fluxbox screenrc"
 
 #####
 
