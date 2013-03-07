@@ -1,7 +1,7 @@
 #Talyns new menu
 
 [begin] (Talyn)
-	[exec] (terminal) {aterm -font courier -g 80x24 -tr +sb -sh 20}
+	[exec] (terminal) {aterm -font courier -g 90x25 -tr +sb -sh 20}
 	[exec] (test Term)
 	[exec] (firefox) {firefox}
 	[exec] (irssi) {aterm }
@@ -30,11 +30,10 @@
 	[end]
 	[submenu] (fluxTools)
 
-		[submenu] (Configuration)
-			[submenu] (Styles)
+		[config] (Configuration)
+		[submenu] (Styles)
 				[stylesdir] (~/dotfiles/fluxbox/styles)
 				[stylesdir] (/usr/share/fluxbox/styles)
-			[end]
 		[end]
 		[separator]
 		[exec] (About Fluxbox) {(fluxbox -v; fluxbox -info | sed 1d) | xmessage -file - -center}
