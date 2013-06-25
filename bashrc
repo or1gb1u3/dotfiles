@@ -18,6 +18,9 @@ shopt -s histappend
 export HISTSIZE=1000
 export HISTFILESIZE=5000
 
+# Exporting the path to path
+export PATH="/opt/Komodo-Edit-8/bin:$PATH"
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
