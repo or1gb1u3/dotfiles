@@ -1,0 +1,22 @@
+# Explanations to declerations in this file can be found in the 
+# example/Xdefaults.example file
+# White space for readability
+
+URxvt*transparent: true
+#URxvt*tintColor: Blue
+URxvt*shading: 40
+
+URxvt*saveLines: 120
+
+URxvt*foreground: Wheat
+URxvt*background: #000000
+
+URxvt*font: xft:DejaVu Sans Mono:pixelsize=12:antialias=true:hinting=true
+URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
+
+URxvt*color4: RoyalBlue
+URxvt*color12: RoyalBlue
+
+URxvt*scrollBar: true
+URxvt*scrollBar_right: true
+URxvt*scrollstyle: rxvt
