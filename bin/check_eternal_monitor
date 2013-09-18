@@ -1,0 +1,26 @@
+#!/usr/bin/python
+#script found at archlinux.me/dusty/2011/05/01/external-monitors/
+#credits goto Dusty
+import subprocess
+
+positions = {
+    "1680x768": "--above", #workMonitor
+}
+
+output = subprocess.check_output("xrandr", shell=True).decode("utf-8")
+
+external_connected=resolution=False
+for line in output.split("\n"):
+    if external_connected:
+        if "+" in line:
+            resolution = line.split()[0]
+            break
+        if "VGA1 connected" in line:
+            external_connected=True
+            
+if external_connected:
+    subprocess.call(
+        "xrandr --output LVDS1 --mode 1366x768 --output VGA1 --mode {resolution} {position} LVDS1".format(
+            resolution=resolution, position=positions.get(resolution, "--above")), shell=True)
+else:
+    subprocess.call("xrandr --auto", shell=True)

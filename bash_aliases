@@ -70,6 +70,6 @@ alias h='history | grep $1'
   alias pacinsd='sudo pacman -S --asdeps'        # Install given package(s) as dependencies of another package
   alias pacmir='sudo pacman -Syy'                # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
   # '[r]emove [o]rphans' - recursively remove ALL orphaned packages
-  alias pacro='pacman -Qtdq > /dev/null && sudo pacman -Rs \$(pacman -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')'
+  alias pacro="pacman -Qtdq > /dev/null && sudo pacman -Rs \$(pacman -Qtdq | sed -e ':a;N;$!ba;s/\n/ /g')"
 
 

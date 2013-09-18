@@ -66,7 +66,8 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    #PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    TERM=rxvt-unicode
     ;;
 *)
     ;;
@@ -91,6 +92,11 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+#functions
+if [ -f ~/.bash_functions ]; then
+	. ~/.bash_functions
 fi
 
 # enable programmable completion features (you don't need to enable

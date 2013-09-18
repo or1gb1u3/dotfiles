@@ -1,43 +1,58 @@
       [submenu] (Accessibility) {}
-         [exec] () {} <>
+         [exec] (Xmag) {xmag} <>
       [end]
       [submenu] (Editors) {}
-         [exec] (Geany) {/usr/bin/geany} <>
-         [exec] (Nano) { urxvt -name nano -e nano} </usr/share/nano/nano-menu.xpm>
-         [exec] (Vim) {urxvt -name vim -e vim} <>
+         [exec] (Gedit) {/usr/bin/gedit} </usr/share/pixmaps/gedit-icon.xpm>
+         [exec] (Nano) { aterm -name nano -e nano} </usr/share/nano/nano-menu.xpm>
+         [exec] (Vim) {aterm -name vim -e vim} <>
       [end]
       [submenu] (File Management) {}
-          [exec] (spaceFM) {/usr/bin/spacefm} <>
+         [exec] (Baobab) {/usr/bin/baobab} </usr/share/pixmaps/baobab.xpm>
+         [exec] (Brasero) {/usr/bin/brasero} <>
+         [exec] (File-Roller) {/usr/bin/file-roller} </usr/share/pixmaps/file-roller.xpm>
+         [exec] (Nautilus) {/usr/bin/nautilus} </usr/share/pixmaps/nautilus.xpm>
       [end]
       [submenu] (Graphics) {}
-         [exec] (Gimp) {/usr/bin/gimp} <>
+         [exec] (LibreOffice Draw) {/usr/bin/libreoffice --draw} </usr/share/icons/hicolor/32x32/apps/libreoffice-draw.xpm>
          [exec] (X Window Snapshot) {xwd | xwud} <>
       [end]
       [submenu] (Network) {}
          [submenu] (Communication) {}
-            [exec] (HexChat) {/usr/bin/hexchat} <>
+            [exec] (Irssi) { x-terminal-emulator -T "Irssi" -e /usr/bin/irssi} <>
             [exec] (Remmina) {/usr/bin/remmina} <>
-            [exec] (Telnet) { urxvt -title "Telnet" -e /usr/bin/telnet} <>
+            [exec] (Telnet) { x-terminal-emulator -T "Telnet" -e /usr/bin/telnet} <>
+            [exec] (Xbiff) {xbiff} <>
          [end]
          [submenu] (File Transfer) {}
             [exec] (Transmission BitTorrent Client (GTK\)) {/usr/bin/transmission-gtk} </usr/share/pixmaps/transmission.xpm>
-            [exec] (FileZilla) {/usr/bin/filezilla} <>
          [end]
       [end]
       [submenu] (Office) {}
-         [exec] (PDF Viewer) {/usr/bin/epdfview} <>
          [exec] (LibreOffice Calc) {/usr/bin/libreoffice --calc} </usr/share/icons/hicolor/32x32/apps/libreoffice-calc.xpm>
          [exec] (LibreOffice Impress) {/usr/bin/libreoffice --impress} </usr/share/icons/hicolor/32x32/apps/libreoffice-impress.xpm>
          [exec] (LibreOffice Writer) {/usr/bin/libreoffice --writer} </usr/share/icons/hicolor/32x32/apps/libreoffice-writer.xpm>
       [end]
       [submenu] (Programming) {}
-         [exec] (Python (v2.7\)) { urxvt -title "Python (v2.7)" -e /usr/bin/python2.7} </usr/share/pixmaps/python2.7.xpm>
+         [exec] (GDB) { x-terminal-emulator -T "GDB" -e /usr/bin/gdb} <>
+         [exec] (Python (v2.7\)) { x-terminal-emulator -T "Python (v2.7)" -e /usr/bin/python2.7} </usr/share/pixmaps/python2.7.xpm>
+      [end]
+      [submenu] (Science) {}
+         [submenu] (Mathematics) {}
+            [exec] (Bc) { x-terminal-emulator -T "Bc" -e /usr/bin/bc} <>
+            [exec] (Dc) { x-terminal-emulator -T "Dc" -e /usr/bin/dc} <>
+            [exec] (GCalcTool) {/usr/bin/gcalctool} </usr/share/pixmaps/gcalctool.xpm>
+            [exec] (LibreOffice Math) {/usr/bin/libreoffice --math} </usr/share/icons/hicolor/32x32/apps/libreoffice-math.xpm>
+            [exec] (Xcalc) {xcalc} <>
+         [end]
       [end]
       [submenu] (Shells) {}
-         [exec] (Bash) { urxvt -title "Bash" -e /bin/bash --login} <>
+         [exec] (Bash) { x-terminal-emulator -T "Bash" -e /bin/bash --login} <>
+         [exec] (Dash) { x-terminal-emulator -T "Dash" -e /bin/dash -i} <>
+         [exec] (Sh) { x-terminal-emulator -T "Sh" -e /bin/sh --login} <>
       [end]
       [submenu] (Sound) {}
-         [exec] () {} <>
+         [exec] (grecord (GNOME 2.0 Recorder\)) {/usr/bin/gnome-sound-recorder} </usr/share/pixmaps/gnome-grecord.xpm>
+         [exec] (Rhythmbox) {/usr/bin/rhythmbox} </usr/share/pixmaps/rhythmbox-small.xpm>
       [end]
       [submenu] (System) {}
          [submenu] (Administration) {}

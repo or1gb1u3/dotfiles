@@ -27,11 +27,11 @@ border_width 1
 #Colors
 default_shade_color grey
 default_outline_color black
-default_color BADCDD #lt. blue
-color1 6694b2 #darker blue
-color2 f8df58 #orange
+default_color ffffff #white
+color1 94BFE9 #lt. blue
+color2 2E5983 #drk. Blue
 color3 ffffff #white
-color4 b4b4b4 #lightgrey
+color4 505050 #grey
 color5 666666 #dark grey
 color6 da0000 #red
 
@@ -45,38 +45,37 @@ top_name_width 7
 
 
 TEXT
-${font A BITE:size=10}${time %A}
-${voffset -20}$hr
-${voffset -15}$alignr${time %B}${font size=10}${voffset -5}${time %d}
+${color2}${font A BITE:size=11}${time %A}
+${voffset -20}${color4}}$hr
+${voffset -15}${color2}$alignr${time %B}${font size=10}${voffset -5}${time %d}
 ${voffset -13}${font Radio Space:size=25}${time %H}${voffset -15}${font Radio Space:size=15}${time :%M}
 
-${color 6694B2}${font A BITE:size=10}${nodename}${font}:
-${voffset -15}$hr
-${font}Kernel :	${alignr}${kernel}
-${font}Uptime :	${alignr}${uptime} 
-   ${color F8DF58}${font StyleBats:size=10}8${font} Battery: ${battery} ${alignr}${color 6694b2}${battery_bar 8,60}
-   $color${font StyleBats:size=10}I${font} Root(${fs_type /}): ${fs_used_perc /}% $alignr${fs_bar 8,60 /}
-
-   ${color ffffff}${font StyleBats:size=10}A${font} CPU0: ${cpu cpu0}% ${alignr}${cpubar 8,60 cpu0}
-   ${font StyleBats:size=10}A${font} CPU1: ${cpu cpu1}% ${alignr}${cpubar 8,60 cpu1}
-   $color${font StyleBats:size=10}p${font} Mem: ${memperc}% ${alignr}${membar 8,60}
-   ${font StyleBats:size=10}5${font} Volume: ${execi 6 amixer sget Master,0 |grep "Front Left:"|cut -d "[" -f2|cut -d "%" -f1}% $alignr${mixerbar Master 8,60} 
-
-${font A BITE:size=10}Communications${font}:
-${voffset -15}$hr
-${if_up wlan0} 
-   ${font PizzaDude Bullets:size=10}v${font}   Up: ${upspeed wlan0} $alignr ${upspeedgraph 8,60 wlan0} 
-   ${font PizzaDude Bullets:size=10}r${font}   Down: ${downspeed wlan0} $alignr ${downspeedgraph 8,60 wlan0} 
-   ${font PizzaDude Bullets:size=10}M${font}   Upload: ${totalup wlan0} 
-   ${font PizzaDude Bullets:size=10}S${font}   Download: ${totaldown wlan0}
-   ${font pizzaDude Bullets:size=10}a${font}   wlan0: $alignr ${addr wlan0}
-$else ${if_up eth0} 
-   ${font PizzaDude Bullets:size=10}v${font}   Up: ${upspeed eth0} $alignr ${upspeedgraph 8,60 eth0} 
-   ${font PizzaDude Bullets:size=10}r${font}   Down: ${downspeed eth0} $alignr ${downspeedgraph 8,60 eth0} 
-   ${font PizzaDude Bullets:size=10}M${font}   Upload: ${totalup eth0} 
-   ${font PizzaDude Bullets:size=10}S${font}   Download: ${totaldown eth0}
-   ${font pizzaDude Bullets:size=10}a${font}   wlan0: $alignr ${addr eth0}$endif
+${color4}$hr
+${color2}${font}Hostname :  ${alignr}${color1}${nodename}
+${font}${color2}Kernel :	${alignr}${color1}${kernel}
+${font}${color2}Uptime :	${alignr}${color1}${uptime} 
+${color2}${font StyleBats:size=10}8${font} Bat:${color1}${battery_percent BAT1}% ${color4}/ ${color2}${font StyleBats:size=10}p${font} Mem: ${color1}${memperc}% ${color4}/ ${color2}${font StyleBats:size=10}5${font} Vol: ${color1}${execi 6 amixer sget Master,0 |grep "Mono:"|cut -d "[" -f2|cut -d "%" -f1}%
+${color2}${font A BITE:size=10}Disk${color4}$hr
+${color2}${font StyleBats:size=10}I${font} Root(${fs_type /}): ${alignr}${color1}${fs_used_perc /}% ${fs_bar 10,60 /}
+${color2}${font StyleBats:size=10}I${font} Home(${fs_type /home}): ${alignr}${color1}${fs_used_perc /home}% ${fs_bar 10,60 /home}
+${color2}${font A BITE:size=10}CPU${color4}$hr
+${color2}${font StyleBats:size=10}A${font} CPU0: ${color1}${cpu cpu0}% ${cpubar cpu0 10,25} ${alignr}${color2}${font StyleBats:size=10}A${font} CPU1: ${color1}${cpu cpu1}% ${cpubar cpu1 10,25}
+${color2}${font StyleBats:size=10}A${font} CPU2: ${color1}${cpu cpu2}% ${cpubar cpu2 10,25} ${alignr}${color2}${font StyleBats:size=10}A${font} CPU3: ${color1}${cpu cpu3}% ${cpubar cpu3 10,25}
+${color2}${font A BITE:size=10}Network${color4}${font}$hr
+${voffset -15}
+${if_up wlp1s0}
+${color2}${font pizzaDude Bullets:size=10}a${font}   wlp1s0: ${alignr}${color1}${addr wlp1s0}
+${color2}${font PizzaDude Bullets:size=10}v${font}   Up:${goto 75}${color1}${upspeed wlp1s0}
+${color2}${font PizzaDude Bullets:size=10}r${font}   Down:${goto 75}${color1}${downspeed wlp1s0}
+${color2}${font PizzaDude Bullets:size=10}M${font}   Upload: ${color1}${totalup wlp1s0}
+${color2}${font PizzaDude Bullets:size=10}S${font}   Download: ${color1}${totaldown wlp1s0}   
+$else ${if_up enp1s00} 
+   ${font PizzaDude Bullets:size=10}v${font}   Up: ${upspeed enp1s0} $alignr ${upspeedgraph 8,60 enp1s0} 
+   ${font PizzaDude Bullets:size=10}r${font}   Down: ${downspeed enp1s0} $alignr ${downspeedgraph 8,60 enp1s0} 
+   ${font PizzaDude Bullets:size=10}M${font}   Upload: ${totalup enp1s0} 
+   ${font PizzaDude Bullets:size=10}S${font}   Download: ${totaldown enp1s0}
+   ${font pizzaDude Bullets:size=10}a${font}   wlp1s0: $alignr ${addr enp1s0}$endif
    ${font pizzaDude Bullets:size=10}b${font}   External IP: $alignr ${execi 3600 wget -O - checkip.dyndns.org | sed -e 's/.*Current IP Adress: //' -e 's/<.*$//'}
-
+${endif}
 
 
