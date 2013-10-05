@@ -2,9 +2,8 @@
 
 [begin] (Talyn)
 	[exec] (terminal) {aterm -font courier -g 90x25 -tr +sb -sh 20}
-	[exec] (test Term)
-	[exec] (firefox) {firefox}
-	[exec] (irssi) {aterm }
+	[exec] (chromium) {chromium}
+	[exec] (irssi) {}
 	[exec] (Run) {fbrun}
 	[workspaces] (Workspaces)
 	[separator]
