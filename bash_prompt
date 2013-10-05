@@ -95,14 +95,14 @@ if [ $? -eq 0 ]; then \
   echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
   if [ "$?" -eq "0" ]; then \
     # @4 - Clean repository - nothing to commit
-    echo "'$Green'('$(parse_git_branch)')"; \
+    echo "'$Green' ('$(parse_git_branch)')"; \
   else \
     # @5 - Changes to working tree
-    echo "'$IRed'{'$(parse_git_branch)'}"; \
+    echo "'$IRed' {'$(parse_git_branch)'}"; \
   fi) '$White'{'$Blue$PathShort$White'}\$ "; \
 else \
   # @2 - Prompt when not in GIT repo
-  echo " '$White'{'$Blue$PathShort$White'}\$ "; \
+  echo "'$White'{'$Blue$PathShort$White'}\$ "; \
 fi)'
 
 #export PS1=$BIGreen'[\u@\h]'$White'{'$Blue'\w'$White'}$(parse_git_branch)$ '
