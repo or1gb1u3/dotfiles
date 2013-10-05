@@ -23,6 +23,10 @@
             [exec] (Transmission BitTorrent Client (GTK\)) {/usr/bin/transmission-gtk} </usr/share/pixmaps/transmission.xpm>
             [exec] (FileZilla) {/usr/bin/filezilla} <>
          [end]
+         [submenu] (Web Browsers) {}
+			[exec] (Firefox) {/usr/bin/firefox}
+			[exec] (Chromium) {/usr/bin/chromium}
+         [end]
       [end]
       [submenu] (Office) {}
          [exec] (PDF Viewer) {/usr/bin/epdfview} <>
@@ -33,18 +37,14 @@
       [submenu] (Programming) {}
          [exec] (Python (v2.7\)) { urxvt -title "Python (v2.7)" -e /usr/bin/python2.7} </usr/share/pixmaps/python2.7.xpm>
       [end]
-      [submenu] (Shells) {}
-         [exec] (Bash) { urxvt -title "Bash" -e /bin/bash --login} <>
-      [end]
-      [submenu] (Sound) {}
-         [exec] () {} <>
-      [end]
+#      [submenu] (Shells) {}
+#         [exec] (Bash) { urxvt -title "Bash" -e /bin/bash --login} <>
+#      [end]
+#      [submenu] (Sound) {}
+#         [exec] () {} <>
+#      [end]
       [submenu] (System) {}
          [submenu] (Administration) {}
-            [exec] (DSL/PPPoE configuration tool) { x-terminal-emulator -T "DSL/PPPoE configuration tool" -e /usr/sbin/pppoeconf} </usr/share/pixmaps/pppoeconf.xpm>
-            [exec] (Editres) {editres} <>
-            [exec] (Gnome Control Center) {/usr/bin/gnome-control-center} </usr/share/pixmaps/gnome-control-center.xpm>
-            [exec] (GNOME Network Tool) {/usr/bin/gnome-nettool} </usr/share/pixmaps/gnome-nettool.xpm>
             [exec] (pppconfig) { x-terminal-emulator -T "pppconfig" -e su-to-root -p root -c /usr/sbin/pppconfig} <>
             [exec] (Xclipboard) {xclipboard} <>
             [exec] (Xfontsel) {xfontsel} <>
@@ -54,9 +54,6 @@
          [submenu] (Hardware) {}
             [exec] (Xvidtune) {xvidtune} <>
          [end]
-         [submenu] (Language Environment) {}
-            [exec] (Input Method Swicher) { x-terminal-emulator -T "Input Method Swicher" -e /usr/bin/im-switch} <>
-         [end]
          [submenu] (Monitoring) {}
             [exec] (GNOME system monitor) {/usr/bin/gnome-system-monitor} <>
             [exec] (Pstree) { x-terminal-emulator -T "Pstree" -e /usr/bin/pstree.x11} </usr/share/pixmaps/pstree16.xpm>
@@ -65,22 +62,9 @@
             [exec] (Xev) {x-terminal-emulator -e xev} <>
             [exec] (Xload) {xload} <>
          [end]
-         [submenu] (Security) {}
-            [exec] (Seahorse) {/usr/bin/seahorse} </usr/share/pixmaps/seahorse.xpm>
-         [end]
-      [end]
-      [submenu] (Terminal Emulators) {}
-         [exec] (Aterm) {/usr/bin/aterm} <>
-         [exec] (Gnome Terminal) {/usr/bin/gnome-terminal} </usr/share/pixmaps/gnome-terminal.xpm>
-         [exec] (XTerm) {xterm} </usr/share/pixmaps/xterm-color_32x32.xpm>
-         [exec] (X-Terminal as root (GKsu\)) {/usr/bin/gksu -u root /usr/bin/x-terminal-emulator} </usr/share/pixmaps/gksu-debian.xpm>
-         [exec] (XTerm (Unicode\)) {uxterm} </usr/share/pixmaps/xterm-color_32x32.xpm>
-      [end]
-      [submenu] (Text) {}
-         [exec] (Character map) {/usr/bin/gucharmap} <>
       [end]
       [submenu] (Video) {}
-         [exec] (Totem) {/usr/bin/totem} </usr/share/pixmaps/totem.xpm>
+         [exec] () {} <>
       [end]
       [submenu] (Viewers) {}
          [exec] (Evince) {/usr/bin/evince} </usr/share/pixmaps/evince.xpm>
