@@ -105,4 +105,4 @@ else \
   echo "'$White'{'$Blue$PathShort$White'}\$ "; \
 fi)'
 
-#export PS1=$BIGreen'[\u@\h]'$White'{'$Blue'\w'$White'}$(parse_git_branch)$ '
+export PS1=$BIGreen'[\u@\h]'$White'{'$Blue'\w'$White'}$(parse_git_branch)$ '
