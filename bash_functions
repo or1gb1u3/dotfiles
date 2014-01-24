@@ -91,3 +91,9 @@ function mach()
     echo -e "\nMemory status :" ; free
     echo -e "\nFilesystem status :"; df -h
 }
+
+function term_colors(){
+  for i in {0..255} ; do
+    printf "\x1b[38;5;${i}mcolour${i}\n"
+  done
+}

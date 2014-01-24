@@ -1,13 +1,13 @@
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls --color'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+    alias grep='grep --color'
+    alias fgrep='fgrep --color'
+    alias egrep='egrep --color'
 fi
 
 #git aliases
@@ -89,7 +89,11 @@ alias h='history | grep $1'
   alias tmuxr='tmux a -t '
   alias tmuxl='tmux ls'
   alias tmuxk='tmux kill-session -t '
+  alias ltmux="if tmux has-session -t $USER; then tmux attach -t $USER;  else tmux new -s $USER; fi"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e'\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# a task finder to look up todo fixme
+alias tasks='grep --exclude-dir=.git -rEI "TODO|FIXME" . 2>/dev/null'
