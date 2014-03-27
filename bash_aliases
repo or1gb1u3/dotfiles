@@ -32,7 +32,7 @@ alias grep='grep -n --color=auto'
 alias h='history | grep $1'
 
 #ls color and extention
-  alias ls='ls --color=auto'
+#  alias ls='ls --color=auto'
   alias l='ls -CF'
   alias ll='ls -alF'
   alias la='ls -A'
@@ -55,6 +55,7 @@ alias h='history | grep $1'
 # standard commands
   alias ping='ping -c 3 '
   alias cat='cat -n '
+  alias less='less -r'
   
 ## Add some shell exits
   alias :q=' exit'

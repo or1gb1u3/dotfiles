@@ -97,3 +97,9 @@ function term_colors(){
     printf "\x1b[38;5;${i}mcolour${i}\n"
   done
 }
+
+
+#Use Tmux on ssh login
+function ssht(){
+  ssh $* -t 'tmux a || tmux || /bin/bash'
+}
