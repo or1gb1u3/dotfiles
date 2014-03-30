@@ -36,6 +36,7 @@ alias h='history | grep $1'
   alias l='ls -CF'
   alias ll='ls -alF'
   alias la='ls -A'
+  alias lf='ls -F'
 
 # Cleaning
   alias clr='clear;echo "Currently logged in on $(tty), as $(whoami) in directory $(pwd)."'
