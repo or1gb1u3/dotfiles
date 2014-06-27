@@ -91,7 +91,7 @@ alias h='history | grep $1'
   alias tmuxr='tmux a -t '
   alias tmuxl='tmux ls'
   alias tmuxk='tmux kill-session -t '
-  alias ltmux="if tmux has-session -t $USER; then tmux attach -t $USER;  else tmux new -s $USER; fi"
+  alias ltmux="if tmux has-session -t $USER; then tmux -2 attach -t $USER; else tmux -2 new -s $USER; fi"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
