@@ -88,6 +88,7 @@ set expandtab
 "Pathogen startup
 execute pathogen#infect()
 
+"let g:solarized_termcolors=256
 syntax enable
 set background=dark
 colorscheme solarized
