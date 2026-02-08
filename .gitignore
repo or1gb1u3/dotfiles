@@ -1,0 +1,7 @@
+# Ignore old repos (kept locally for reference)
+old/
+
+# OS files
+.DS_Store
+*.swp
+*~
